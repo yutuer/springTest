@@ -22,10 +22,10 @@ public class TestAop extends TestBaseCore implements BeanFactoryAware{
 	public void testBefore() {
 		waiter = (Waiter)beanFactory.getBean("waiter", "1");
 		
-		waiter.greetTo("yutuer");
+		waiter.greetTo("yutuer", "yutuer1");
 		waiter.serverTo("sam");
 		
-		seller.greetTo("jack");
+		seller.greetTo("jack", "jack2122");
 	}
 
 	public void setBeanFactory(BeanFactory beanFactory) throws BeansException {

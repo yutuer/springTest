@@ -7,7 +7,11 @@ import org.springframework.stereotype.Component;
 public class Seller{
 	private Logger logger = Logger.getLogger(Seller.class);
 	
-	public void greetTo(String name) {
+	public Seller() {
+		super();
+	}
+
+	public void greetTo(String name, String name2) {
 		logger.info("Seller greet to :" + name);
 	}
 }

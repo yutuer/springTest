@@ -7,9 +7,9 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component("waiter")
+@Component
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-public class Waiter {
+public class Waiter extends Seller{
 
 	private Logger logger = Logger.getLogger(Waiter.class);
 
@@ -24,7 +24,7 @@ public class Waiter {
 		this.time = new Date().toLocaleString();
 	}
 
-	public void greetTo(String name) {
+	public void greetTo(String name, String name2) {
 		logger.info("waiter greet to :" + name);
 	}
 
