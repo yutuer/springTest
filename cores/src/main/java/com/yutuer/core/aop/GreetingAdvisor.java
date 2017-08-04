@@ -16,21 +16,21 @@ public class GreetingAdvisor extends StaticMethodMatcherPointcutAdvisor {
 	private Logger logger = Logger.getLogger(GreetingAdvisor.class);
 	
 	public boolean matches(Method method, Class<?> targetClass) {
-		logger.info("targetClass:" + targetClass);
-		return "greetTo".equals(method.getName());
+		logger.info("targetClass:" + targetClass + ", method:" + method.getName());
+		return "serverTo".equals(method.getName());
 	}
 
 	@Override
 	public ClassFilter getClassFilter() {
 		return new ClassFilter() {
 			public boolean matches(Class<?> clazz) {
-				return Waiter.class.isAssignableFrom(clazz);
+				return Seller.class.isAssignableFrom(clazz);
 			}
 		};
 	}
 
 	@Autowired
-	public void setAdvice(GreetingAfterAdvice advice) {
+	public void setAdvice(GreetingBeforeAdvice advice) {
 		super.setAdvice(advice);
 	}
 

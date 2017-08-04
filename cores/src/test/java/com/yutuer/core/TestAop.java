@@ -23,8 +23,7 @@ public class TestAop extends TestBaseCore implements BeanFactoryAware{
 		waiter = (Waiter)beanFactory.getBean("waiter", "1");
 		
 		waiter.greetTo("yutuer", "yutuer1");
-		waiter.serverTo("sam");
-		
+//		waiter.serverTo("yutuer322222");
 		seller.greetTo("jack", "jack2122");
 	}
 

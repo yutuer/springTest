@@ -14,4 +14,8 @@ public class Seller{
 	public void greetTo(String name, String name2) {
 		logger.info("Seller greet to :" + name);
 	}
+	
+	public void serverTo(String name, String name2) {
+		logger.info("waiter server to :" + name);
+	}
 }
