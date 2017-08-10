@@ -27,10 +27,15 @@ public class Waiter {
 		super();
 		this.time = new Date().toLocaleString();
 	}
+	
+	private void serverTo(){
+		logger.info("waiter server to :");
+	}
 
 	public void greetTo(String name, String name2) {
 		logger.info("waiter greet to :" + name);
-		seller.serverTo(name, name2);
+		seller.serverTo(name, name2); //直接调用被拦截的类的方法, 触发aop
+		serverTo(); //间接调用,不会触发aop
 	}
 
 }

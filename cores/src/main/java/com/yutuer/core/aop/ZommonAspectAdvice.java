@@ -25,14 +25,17 @@ public class ZommonAspectAdvice {
 	//可以定义2个
 	@Before(value="coreMethod()")
 	public void before(JoinPoint jp) {
+		//先进通用的
 		logger.info("before jp:" + jp);
 	}
 	
 	//这里如果加上args,参数数量要一致
 	@Before(value="coreMethod() && args(name, name1)")
 	public void before(JoinPoint jp, String name, String name1) {
+		//再进特殊的
 		logger.info("before jp:" + jp);
-		logger.info("before jp :" + name);
+		//能取到被拦截方法调用的参数
+		logger.info("before jp name:" + name);
 	}
 	
 	@After(value="coreMethod()")
