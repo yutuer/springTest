@@ -16,6 +16,6 @@ public class Seller{
 	}
 	
 	public void serverTo(String name, String name2) {
-		logger.info("waiter server to :" + name);
+		logger.info("Seller server to :" + name);
 	}
 }

@@ -9,7 +9,7 @@ import org.springframework.aop.support.StaticMethodMatcherPointcutAdvisor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class GreetingAdvisor extends StaticMethodMatcherPointcutAdvisor {
 
 	private static final long serialVersionUID = 1L;
@@ -17,14 +17,14 @@ public class GreetingAdvisor extends StaticMethodMatcherPointcutAdvisor {
 	
 	public boolean matches(Method method, Class<?> targetClass) {
 		logger.info("targetClass:" + targetClass + ", method:" + method.getName());
-		return "serverTo".equals(method.getName());
+		return "greetTo".equals(method.getName());
 	}
 
 	@Override
 	public ClassFilter getClassFilter() {
 		return new ClassFilter() {
 			public boolean matches(Class<?> clazz) {
-				return Seller.class.isAssignableFrom(clazz);
+				return Waiter.class.isAssignableFrom(clazz);
 			}
 		};
 	}

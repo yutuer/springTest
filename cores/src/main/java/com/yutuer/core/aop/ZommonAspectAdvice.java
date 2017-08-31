@@ -11,8 +11,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-@Component
-@Aspect
+//@Component
+//@Aspect
 public class ZommonAspectAdvice {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
